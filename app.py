@@ -4,7 +4,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="РНП",
-    page_icon="📊",
+    page_icon="📋",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -100,7 +100,7 @@ st.markdown(
         .stButton > button,
         .stButton > button p,
         .stButton > button div {
-            font-size: 1rem !important;
+            font-size: 0.9rem !important;
             font-weight: 400 !important;
         }
 
@@ -144,7 +144,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown("# 📊 Автоматизация регулярной отчётности")
+st.markdown("# 📋 Автоматизация регулярной отчётности")
 st.divider()
 
 tooltips = {
