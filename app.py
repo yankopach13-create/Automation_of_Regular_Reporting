@@ -13,15 +13,16 @@ st.markdown(
     """
     <style>
         .block-container {
-            max-width: 720px;
+            max-width: 860px;
             padding-top: 3rem;
         }
 
         h1 {
-            font-size: 2.2rem !important;
+            font-size: clamp(1.35rem, 2.8vw, 2rem) !important;
             font-weight: 700 !important;
             margin-bottom: 0.25rem !important;
             text-align: center !important;
+            white-space: nowrap !important;
         }
 
         .help-icon {
@@ -30,7 +31,7 @@ st.markdown(
             align-items: center;
             justify-content: center;
             height: 100%;
-            min-height: 46px;
+            min-height: 34px;
             cursor: help;
         }
 
@@ -105,11 +106,12 @@ st.markdown(
 
         .stButton > button {
             width: 100%;
-            min-height: 46px;
+            min-height: 34px;
+            padding: 4px 20px !important;
             background-color: #1A1D24 !important;
             color: #FAFAFA !important;
             border: 1px solid #3A3F4B !important;
-            border-radius: 8px !important;
+            border-radius: 6px !important;
             transition: border-color 0.2s ease, background-color 0.2s ease;
         }
 
