@@ -23,12 +23,6 @@ st.markdown(
             margin-bottom: 0.25rem !important;
         }
 
-        .subtitle {
-            color: #C9CDD3;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
         .help-icon {
             position: relative;
             display: flex;
@@ -109,7 +103,7 @@ st.markdown(
             border: 1px solid #3A3F4B !important;
             border-radius: 8px !important;
             font-size: 1.2rem !important;
-            font-weight: 700 !important;
+            font-weight: 900 !important;
             transition: border-color 0.2s ease, background-color 0.2s ease;
         }
 
@@ -133,10 +127,6 @@ st.markdown(
 )
 
 st.markdown("# 📊 Автоматизация регулярной отчётности")
-st.markdown(
-    '<p class="subtitle">Выберите направление отчётности:</p>',
-    unsafe_allow_html=True,
-)
 st.divider()
 
 tooltips = {
