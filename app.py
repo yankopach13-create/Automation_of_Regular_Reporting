@@ -25,6 +25,13 @@ st.markdown(
             white-space: nowrap !important;
         }
 
+        .subtitle {
+            color: #C9CDD3;
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
         .help-icon {
             position: relative;
             display: flex;
@@ -145,6 +152,10 @@ st.markdown(
 )
 
 st.markdown("# 📋 Автоматизация регулярной отчётности")
+st.markdown(
+    '<p class="subtitle">Выберите инструмент для работы с данными:</p>',
+    unsafe_allow_html=True,
+)
 st.divider()
 
 tooltips = {
