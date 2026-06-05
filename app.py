@@ -46,13 +46,13 @@ st.markdown(
 
         .stButton > button {
             width: 100%;
-            min-height: 52px;
+            min-height: 56px;
             background-color: #1A1D24 !important;
             color: #FAFAFA !important;
             border: 1px solid #3A3F4B !important;
             border-radius: 8px !important;
-            font-size: 1rem !important;
-            font-weight: 500 !important;
+            font-size: 1.2rem !important;
+            font-weight: 700 !important;
             transition: border-color 0.2s ease, background-color 0.2s ease;
         }
 
