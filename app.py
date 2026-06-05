@@ -182,8 +182,4 @@ for label, direction in buttons:
     with icon_col:
         st.markdown(render_help_icon(tooltips[direction]), unsafe_allow_html=True)
     with button_col:
-        if st.button(label, key=direction, use_container_width=True):
-            st.session_state["direction"] = direction
-
-if st.session_state.get("direction"):
-    st.success(f"Выбрано: РНП {st.session_state['direction']}")
+        st.button(label, key=direction, use_container_width=True)
