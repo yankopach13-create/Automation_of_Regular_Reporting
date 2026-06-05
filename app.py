@@ -21,6 +21,7 @@ st.markdown(
             font-size: 2.2rem !important;
             font-weight: 700 !important;
             margin-bottom: 0.25rem !important;
+            text-align: center !important;
         }
 
         .help-icon {
@@ -29,7 +30,7 @@ st.markdown(
             align-items: center;
             justify-content: center;
             height: 100%;
-            min-height: 56px;
+            min-height: 46px;
             cursor: help;
         }
 
@@ -98,13 +99,13 @@ st.markdown(
         .stButton > button,
         .stButton > button p,
         .stButton > button div {
-            font-size: 1.2rem !important;
-            font-weight: 800 !important;
+            font-size: 1rem !important;
+            font-weight: 400 !important;
         }
 
         .stButton > button {
             width: 100%;
-            min-height: 56px;
+            min-height: 46px;
             background-color: #1A1D24 !important;
             color: #FAFAFA !important;
             border: 1px solid #3A3F4B !important;
