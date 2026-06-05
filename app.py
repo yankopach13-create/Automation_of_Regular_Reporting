@@ -28,8 +28,13 @@ st.markdown(
         .subtitle {
             color: #C9CDD3;
             font-size: 1rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
+            text-align: left;
+            margin-bottom: 0.25rem;
+        }
+
+        hr {
+            margin-top: 0.5rem !important;
+            margin-bottom: 0.75rem !important;
         }
 
         .help-icon {
