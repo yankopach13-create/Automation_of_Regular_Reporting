@@ -36,17 +36,29 @@ st.markdown(
             justify-content: center;
             height: 100%;
             min-height: 56px;
-            color: #9CA3AF;
-            font-size: 1.15rem;
-            font-weight: 600;
             cursor: help;
+        }
+
+        .help-icon .help-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border: 1px solid #5B6270;
+            border-radius: 50%;
+            color: #9CA3AF;
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1;
+            background-color: #1A1D24;
         }
 
         .help-icon .tooltip-text {
             visibility: hidden;
             opacity: 0;
             position: absolute;
-            left: calc(100% + 12px);
+            right: calc(100% + 12px);
             top: 50%;
             transform: translateY(-50%);
             background-color: #262730;
@@ -150,9 +162,10 @@ def render_help_icon(items: list[str]) -> str:
     """Формирует HTML иконки с подсказкой при наведении."""
     list_items = "".join(f"<li>{item}</li>" for item in items)
     return (
-        f'<div class="help-icon">?'
+        '<div class="help-icon">'
+        '<span class="help-circle">?</span>'
         f'<span class="tooltip-text"><ul>{list_items}</ul></span>'
-        f"</div>"
+        "</div>"
     )
 
 
