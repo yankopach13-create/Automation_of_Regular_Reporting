@@ -95,6 +95,13 @@ st.markdown(
             align-items: center;
         }
 
+        .stButton > button,
+        .stButton > button p,
+        .stButton > button div {
+            font-size: 1.2rem !important;
+            font-weight: 800 !important;
+        }
+
         .stButton > button {
             width: 100%;
             min-height: 56px;
@@ -102,8 +109,6 @@ st.markdown(
             color: #FAFAFA !important;
             border: 1px solid #3A3F4B !important;
             border-radius: 8px !important;
-            font-size: 1.2rem !important;
-            font-weight: 900 !important;
             transition: border-color 0.2s ease, background-color 0.2s ease;
         }
 
@@ -113,8 +118,18 @@ st.markdown(
             color: #FFFFFF !important;
         }
 
+        .stButton > button:hover p,
+        .stButton > button:hover div {
+            color: #FFFFFF !important;
+        }
+
         .stButton > button:focus:not(:active) {
             border-color: #6C63FF !important;
+            color: #FFFFFF !important;
+        }
+
+        .stButton > button:focus:not(:active) p,
+        .stButton > button:focus:not(:active) div {
             color: #FFFFFF !important;
         }
 
