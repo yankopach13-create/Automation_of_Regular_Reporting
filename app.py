@@ -29,17 +29,62 @@ st.markdown(
             margin-bottom: 1.5rem;
         }
 
-        .info-icon {
+        .help-icon {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100%;
-            min-height: 52px;
+            min-height: 56px;
             color: #9CA3AF;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+            cursor: help;
         }
 
-        div[data-testid="column"]:has(.info-icon) {
+        .help-icon .tooltip-text {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            left: calc(100% + 12px);
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #262730;
+            color: #FAFAFA;
+            border: 1px solid #3A3F4B;
+            border-radius: 8px;
+            padding: 12px 16px;
+            width: max-content;
+            max-width: 340px;
+            z-index: 1000;
+            font-size: 0.9rem;
+            font-weight: 400;
+            line-height: 1.5;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            text-align: left;
+            pointer-events: none;
+        }
+
+        .help-icon .tooltip-text ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        .help-icon .tooltip-text li {
+            margin-bottom: 0.25rem;
+        }
+
+        .help-icon .tooltip-text li:last-child {
+            margin-bottom: 0;
+        }
+
+        .help-icon:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        div[data-testid="column"]:has(.help-icon) {
             display: flex;
             align-items: center;
         }
@@ -82,15 +127,39 @@ st.markdown(
 )
 st.divider()
 
+tooltips = {
+    "B2B": [
+        "РНП Спец. розницы и Традиции;",
+        "Общий РНП Блоки спец розницы и Традиции;",
+        "Информация для ИИ отчёта",
+    ],
+    "B2C": [
+        "РНП Розницы;",
+        "Общий РНП блок розницы;",
+        "Информация для ИИ отчёта",
+    ],
+}
+
 buttons = [
     ("РНП B2B", "B2B"),
     ("РНП B2C", "B2C"),
 ]
 
+
+def render_help_icon(items: list[str]) -> str:
+    """Формирует HTML иконки с подсказкой при наведении."""
+    list_items = "".join(f"<li>{item}</li>" for item in items)
+    return (
+        f'<div class="help-icon">?'
+        f'<span class="tooltip-text"><ul>{list_items}</ul></span>'
+        f"</div>"
+    )
+
+
 for label, direction in buttons:
     icon_col, button_col = st.columns([0.06, 0.94])
     with icon_col:
-        st.markdown('<div class="info-icon">ⓘ</div>', unsafe_allow_html=True)
+        st.markdown(render_help_icon(tooltips[direction]), unsafe_allow_html=True)
     with button_col:
         if st.button(label, key=direction, use_container_width=True):
             st.session_state["direction"] = direction
