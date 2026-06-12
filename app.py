@@ -169,6 +169,7 @@ tooltips = {
 buttons = [
     ("РНП B2B", "B2B"),
     ("РНП B2C", "B2C"),
+    ("SYNC", "SYNC"),
 ]
 
 
@@ -186,6 +187,7 @@ def render_help_icon(items: list[str]) -> str:
 for label, direction in buttons:
     icon_col, button_col = st.columns([0.06, 0.94])
     with icon_col:
-        st.markdown(render_help_icon(tooltips[direction]), unsafe_allow_html=True)
+        if direction in tooltips:
+            st.markdown(render_help_icon(tooltips[direction]), unsafe_allow_html=True)
     with button_col:
         st.button(label, key=direction, use_container_width=True)
