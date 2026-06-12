@@ -104,12 +104,16 @@ st.markdown(
 
         .stButton > button,
         .stButton > button p,
-        .stButton > button div {
+        .stButton > button div,
+        .stLinkButton > a,
+        .stLinkButton > a p,
+        .stLinkButton > a div {
             font-size: 0.9rem !important;
             font-weight: 400 !important;
         }
 
-        .stButton > button {
+        .stButton > button,
+        .stLinkButton > a {
             width: 100%;
             min-height: 34px;
             padding: 4px 20px !important;
@@ -117,27 +121,34 @@ st.markdown(
             color: #FAFAFA !important;
             border: 1px solid #3A3F4B !important;
             border-radius: 6px !important;
+            text-decoration: none !important;
             transition: border-color 0.2s ease, background-color 0.2s ease;
         }
 
-        .stButton > button:hover {
+        .stButton > button:hover,
+        .stLinkButton > a:hover {
             background-color: #232733 !important;
             border-color: #5B6270 !important;
             color: #FFFFFF !important;
         }
 
         .stButton > button:hover p,
-        .stButton > button:hover div {
+        .stButton > button:hover div,
+        .stLinkButton > a:hover p,
+        .stLinkButton > a:hover div {
             color: #FFFFFF !important;
         }
 
-        .stButton > button:focus:not(:active) {
+        .stButton > button:focus:not(:active),
+        .stLinkButton > a:focus:not(:active) {
             border-color: #6C63FF !important;
             color: #FFFFFF !important;
         }
 
         .stButton > button:focus:not(:active) p,
-        .stButton > button:focus:not(:active) div {
+        .stButton > button:focus:not(:active) div,
+        .stLinkButton > a:focus:not(:active) p,
+        .stLinkButton > a:focus:not(:active) div {
             color: #FFFFFF !important;
         }
 
@@ -175,6 +186,10 @@ buttons = [
     ("SYNC", "SYNC"),
 ]
 
+links = {
+    "B2B": "https://analysis-b2b.streamlit.app/",
+}
+
 
 def render_help_icon(items: list[str]) -> str:
     """Формирует HTML иконки с подсказкой при наведении."""
@@ -193,4 +208,7 @@ for label, direction in buttons:
         if direction in tooltips:
             st.markdown(render_help_icon(tooltips[direction]), unsafe_allow_html=True)
     with button_col:
-        st.button(label, key=direction, use_container_width=True)
+        if direction in links:
+            st.link_button(label, links[direction], use_container_width=True)
+        else:
+            st.button(label, key=direction, use_container_width=True)
