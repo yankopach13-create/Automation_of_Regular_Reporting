@@ -177,6 +177,7 @@ tooltips = {
     ],
     "SYNC": [
         "Доходные показатели и продажи по категориям всех КО",
+        "Прогноз доходных показателей",
     ],
 }
 
@@ -188,6 +189,7 @@ buttons = [
 
 links = {
     "B2B": "https://analysis-b2b.streamlit.app/",
+    "B2C": "https://rnp-b2c.streamlit.app/",
 }
 
 
